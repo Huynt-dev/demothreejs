@@ -1,13 +1,11 @@
 import React from "react";
 
-const Wall = ({ width, height, depth, position, rotation }) => {
+const Wall = ({ width, height, depth, x, z, rotation }) => {
       return (
-            <group position={[0, 0, 0]}>
-                  <mesh position={position} rotation={rotation} dispose={null} receiveShadow castShadow>
-                        <boxBufferGeometry attach="geometry" scale={[14, 2, 3]} args={[width, height, depth]} />
-                        <meshStandardMaterial attach="material" />
-                  </mesh>
-            </group>
+            <mesh position={[x, height / 2, z]} rotation={rotation} castShadow receiveShadow>
+                  <boxGeometry attach="geometry" args={[width, height, depth]} />
+                  <meshStandardMaterial attach="material" />
+            </mesh>
       );
 };
 

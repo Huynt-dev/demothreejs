@@ -5,10 +5,10 @@ export default function Table(props) {
   const group = useRef()
   const { nodes, materials } = useGLTF('../../../scene.gltf')
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group receiveShadow ref={group} {...props} dispose={null}>
       <group rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
-          <group position={[0, 2, -0.5]} scale={[2, 2, 2]}>
+          <group position={[0, 1.3, -0.5]} scale={[2, 2, 2]}>
             <mesh geometry={nodes.mesh_0.geometry} material={materials.qita} />
             <mesh geometry={nodes.mesh_1.geometry} material={materials.lvzhi} />
             <mesh geometry={nodes.mesh_2.geometry} material={materials.zhuoyi} />
